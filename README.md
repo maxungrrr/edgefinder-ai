@@ -1,74 +1,20 @@
+# EdgeFinder AI — WNBA v2
 
-# EdgeFinder AI — Sports Betting MVP
+Live WNBA player-prop market scanner using The Odds API.
 
-A free Streamlit dashboard for researching sports-betting edges.
+## Replace in GitHub
+Replace the existing root files:
+- `streamlit_app.py`
+- `requirements.txt`
+- `README.md`
 
-## Current MVP
+Commit the changes. Streamlit Community Cloud watches the GitHub repository and normally updates the deployed app automatically.
 
-- NBA / NFL / MLB selector
-- Demo mode with clearly labeled synthetic data
-- Optional live odds loading
-- American-odds → implied probability
-- Model probability → edge %
-- Expected value
-- Candidate-bet ranking
-- Sportsbook filtering
-- No automatic bet placement
+## Live mode
+Enter a free The Odds API key in the app. WNBA current odds and player props are available through the API. Player props are queried one game at a time.
+
+## Markets
+Points, 1Q Points, Rebounds, 1Q Rebounds, Assists, 1Q Assists, Threes, PRA, PR, PA and RA.
 
 ## Important
-
-The first release deliberately does **not** invent model probabilities for live
-odds. The next phase is the actual predictive model, trained on historical
-player/game data and backtested out of sample.
-
-## Run locally
-
-```bash
-pip install -r requirements.txt
-streamlit run streamlit_app.py
-```
-
-## Deploy free
-
-1. Create a GitHub repository.
-2. Upload `streamlit_app.py`, `requirements.txt`, and this README.
-3. Sign into Streamlit Community Cloud with GitHub.
-4. Click **Create app**.
-5. Select your repository and `streamlit_app.py`.
-6. Deploy.
-
-## Live Odds
-
-The app can accept a The Odds API key through the sidebar. For production,
-store the key as a Streamlit secret rather than putting it in source code.
-
-## Roadmap
-
-### Phase 2 — NBA model
-- historical player game logs
-- minutes projection
-- usage
-- opponent matchup
-- pace
-- injuries
-- home/away
-- rest
-- rolling averages
-- XGBoost / gradient boosting
-- probability calibration
-- out-of-sample backtesting
-
-### Phase 3
-- NFL player props
-- MLB player props
-- line movement
-- closing-line value
-- bankroll tracking
-- model-vs-market diagnostics
-
-### Phase 4
-- automated daily scan
-- alerts
-- model ensembles
-- separate models by market
-- paper-trading ledger
+This is a market-data release, not the predictive AI yet. It deliberately does not fabricate model probabilities. The next release will add player-performance modeling and out-of-sample paper tracking.
